@@ -1,0 +1,24 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Cache e bytecode do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editores
+.vscode/
+
+# Variáveis de ambiente
+.env
+.env.*
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+~$*

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "org_01",
+    "name": "Folhaverde comum",
+    "sequence": "ATGCTACGTTAG",
+    "description": "Organismo fictício associado a ambientes de floresta úmida."
+  },
+  {
+    "id": "org_02",
+    "name": "Folhaverde serrana",
+    "sequence": "ATGCTACGTCAG",
+    "description": "Parente próximo adaptado a regiões de maior altitude."
+  },
+  {
+    "id": "org_03",
+    "name": "Musgo-dourado",
+    "sequence": "ATGATACGTCAG",
+    "description": "Organismo fictício encontrado sobre rochas sombreadas."
+  },
+  {
+    "id": "org_04",
+    "name": "Ramo-azul",
+    "sequence": "CTGATACGACAG",
+    "description": "Espécie fictícia com pigmentação azulada nas extremidades."
+  },
+  {
+    "id": "org_05",
+    "name": "Broto-do-brejo",
+    "sequence": "CTGAAACGACAG",
+    "description": "Organismo fictício adaptado a solos alagados."
+  },
+  {
+    "id": "org_06",
+    "name": "Trepadeira-rubra",
+    "sequence": "CTGAAATGACAA",
+    "description": "Espécie fictícia trepadeira com estruturas avermelhadas."
+  }
+]
