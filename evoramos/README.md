@@ -5,8 +5,9 @@ O jogador observará árvores construídas a partir de sequências fictícias de
 e deverá reconhecer eventos evolutivos, como especiação, hibridização e
 transferência horizontal de genes.
 
-Neste estágio, o projeto oferece somente uma base funcional: dados fictícios,
-uma tabela de organismos e um grafo demonstrativo.
+O MVP oferece conceitos introdutórios, cinco exercícios guiados, comparação de
+sequências e árvores didáticas interativas. Os exemplos destacam especiação,
+hibridização e transferência horizontal de genes.
 
 ## Stack
 
@@ -59,10 +60,12 @@ evoramos/
 ├── README.md
 ├── .gitignore
 ├── data/
-│   └── sequences.json
+│   ├── sequences.json
+│   └── examples.json
 ├── src/
 │   ├── __init__.py
 │   ├── distance.py
+│   ├── example_loader.py
 │   ├── tree_builder.py
 │   ├── game_rules.py
 │   └── cytoscape_elements.py
@@ -74,9 +77,20 @@ evoramos/
 
 ## Próximos passos
 
-1. Implementar um algoritmo filogenético adequado.
-2. Criar fases e desafios com dificuldade progressiva.
-3. Permitir que o jogador selecione eventos no grafo.
-4. Adicionar validação das respostas, pontuação e feedback educativo.
-5. Incluir exemplos de hibridização e transferência horizontal de genes.
-6. Criar testes automatizados para os módulos da aplicação.
+1. Substituir o agrupamento didático por uma implementação completa de UPGMA.
+2. Permitir que o jogador selecione eventos diretamente no grafo.
+3. Adicionar validação das respostas, pontuação e feedback.
+4. Explorar alinhamento de sequências com Biopython.
+5. Criar testes automatizados para os módulos e callbacks.
+
+## Exercícios disponíveis
+
+- Sequências muito parecidas
+- Exemplo de especiação
+- Exemplo de hibridização
+- Exemplo de transferência horizontal
+- Desafio misto
+
+As árvores atuais usam distância de Hamming e agrupamento didático. Elas foram
+projetadas para aprendizagem e não representam reconstruções filogenéticas
+científicas completas.
