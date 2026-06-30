@@ -6,11 +6,36 @@
     "description": "Compare pequenas diferenças no DNA e observe como elas aproximam os organismos.",
     "learning_goal": "Relacionar poucas mutações a uma maior proximidade evolutiva.",
     "organisms": [
-      {"id": "s1", "name": "Musgo-claro", "sequence": "ATGCTACGTTAG", "description": "Musgo fictício de áreas úmidas."},
-      {"id": "s2", "name": "Musgo-serrano", "sequence": "ATGCTACGTCAG", "description": "Parente encontrado em áreas elevadas."},
-      {"id": "s3", "name": "Musgo-dourado", "sequence": "ATGATACGTCAG", "description": "Apresenta pigmentação dourada."},
-      {"id": "s4", "name": "Líquen-verde", "sequence": "CTGATACGACAG", "description": "Organismo de superfícies rochosas."},
-      {"id": "s5", "name": "Líquen-azul", "sequence": "CTGAAACGACAG", "description": "Variedade fictícia de tom azulado."}
+      {
+        "id": "s1",
+        "name": "Musgo-claro",
+        "sequence": "ATGCTACGTTAG",
+        "description": "Musgo fictício de áreas úmidas."
+      },
+      {
+        "id": "s2",
+        "name": "Musgo-serrano",
+        "sequence": "ATGCTACGTCAG",
+        "description": "Parente encontrado em áreas elevadas."
+      },
+      {
+        "id": "s3",
+        "name": "Musgo-dourado",
+        "sequence": "ATGATACGTCAG",
+        "description": "Apresenta pigmentação dourada."
+      },
+      {
+        "id": "s4",
+        "name": "Líquen-verde",
+        "sequence": "CTGATACGACAG",
+        "description": "Organismo de superfícies rochosas."
+      },
+      {
+        "id": "s5",
+        "name": "Líquen-azul",
+        "sequence": "CTGAAACGACAG",
+        "description": "Variedade fictícia de tom azulado."
+      }
     ],
     "expected_events": [],
     "explanation": "Observe quais sequências diferem em poucas posições. Musgo-claro e Musgo-serrano diferem em apenas uma base e, por isso, aparecem próximos.",
@@ -24,11 +49,36 @@
     "description": "Uma linhagem ancestral se divide e origina grupos descendentes.",
     "learning_goal": "Reconhecer um nó interno como evento de divergência.",
     "organisms": [
-      {"id": "sp1", "name": "Folha-lisa", "sequence": "AACCTTGGAACC", "description": "Planta fictícia de folhas lisas."},
-      {"id": "sp2", "name": "Folha-ondulada", "sequence": "AACCTTGGAACG", "description": "Linhagem próxima com bordas onduladas."},
-      {"id": "sp3", "name": "Broto-alto", "sequence": "AACCATGGAACG", "description": "Espécie adaptada à maior luminosidade."},
-      {"id": "sp4", "name": "Broto-baixo", "sequence": "GACCATGGATCG", "description": "Espécie de vegetação rasteira."},
-      {"id": "sp5", "name": "Ramo-pálido", "sequence": "GACGATGGATCG", "description": "Linhagem com baixa pigmentação."}
+      {
+        "id": "sp1",
+        "name": "Folha-lisa",
+        "sequence": "AACCTTGGAACC",
+        "description": "Planta fictícia de folhas lisas."
+      },
+      {
+        "id": "sp2",
+        "name": "Folha-ondulada",
+        "sequence": "AACCTTGGAACG",
+        "description": "Linhagem próxima com bordas onduladas."
+      },
+      {
+        "id": "sp3",
+        "name": "Broto-alto",
+        "sequence": "AACCATGGAACG",
+        "description": "Espécie adaptada à maior luminosidade."
+      },
+      {
+        "id": "sp4",
+        "name": "Broto-baixo",
+        "sequence": "GACCATGGATCG",
+        "description": "Espécie de vegetação rasteira."
+      },
+      {
+        "id": "sp5",
+        "name": "Ramo-pálido",
+        "sequence": "GACGATGGATCG",
+        "description": "Linhagem com baixa pigmentação."
+      }
     ],
     "expected_events": [
       {
@@ -37,7 +87,19 @@
         "target_type": "node",
         "event_type": "speciation",
         "label": "Especiação",
-        "explanation": "Este nó representa especiação porque uma linhagem ancestral se divide em grupos descendentes."
+        "explanation": "Este nó representa especiação porque uma linhagem ancestral se divide em grupos descendentes.",
+        "primary_target_id": "ancestor_4",
+        "primary_target_type": "node",
+        "related_node_ids": [
+          "ancestor_2",
+          "ancestor_3"
+        ],
+        "related_edge_ids": [
+          "ancestor_4__ancestor_2",
+          "ancestor_4__ancestor_3"
+        ],
+        "short_feedback": "Este nó representa uma especiação.",
+        "full_explanation": "O nó Ancestral 4 representa uma especiação porque uma linhagem ancestral se divide em dois ramos descendentes: um ramo que leva a Broto-baixo e Ramo-pálido e outro ramo que leva a Folha-lisa, Folha-ondulada e Broto-alto."
       }
     ],
     "explanation": "O nó ancestral destacado representa uma linhagem que originou duas ou mais linhagens. Cada bifurcação é uma hipótese de especiação.",
@@ -51,11 +113,36 @@
     "description": "Um organismo recebe contribuição genética de duas linhagens distintas.",
     "learning_goal": "Distinguir uma rede híbrida de uma árvore puramente ramificada.",
     "organisms": [
-      {"id": "h1", "name": "Flor-rubra", "sequence": "TTGCAACCGGTA", "description": "Linhagem fictícia de flores vermelhas."},
-      {"id": "h2", "name": "Flor-âmbar", "sequence": "TTGCAACCGGAA", "description": "Parente próxima de flores alaranjadas."},
-      {"id": "h3", "name": "Flor-anil", "sequence": "CAGCAATCGGAA", "description": "Linhagem de flores azuladas."},
-      {"id": "h4", "name": "Flor-violeta híbrida", "sequence": "TAGCAACCGGAA", "description": "Organismo com sinais das linhagens rubra e anil."},
-      {"id": "h5", "name": "Erva-prateada", "sequence": "CAGTAATCGGAT", "description": "Grupo externo usado para comparação."}
+      {
+        "id": "h1",
+        "name": "Flor-rubra",
+        "sequence": "TTGCAACCGGTA",
+        "description": "Linhagem fictícia de flores vermelhas."
+      },
+      {
+        "id": "h2",
+        "name": "Flor-âmbar",
+        "sequence": "TTGCAACCGGAA",
+        "description": "Parente próxima de flores alaranjadas."
+      },
+      {
+        "id": "h3",
+        "name": "Flor-anil",
+        "sequence": "CAGCAATCGGAA",
+        "description": "Linhagem de flores azuladas."
+      },
+      {
+        "id": "h4",
+        "name": "Flor-violeta híbrida",
+        "sequence": "TAGCAACCGGAA",
+        "description": "Organismo com sinais das linhagens rubra e anil."
+      },
+      {
+        "id": "h5",
+        "name": "Erva-prateada",
+        "sequence": "CAGTAATCGGAT",
+        "description": "Grupo externo usado para comparação."
+      }
     ],
     "expected_events": [
       {
@@ -64,13 +151,35 @@
         "target_type": "node",
         "event_type": "hybridization",
         "label": "Hibridização",
-        "explanation": "Este organismo é híbrido porque recebe contribuição genética de duas linhagens distintas."
+        "explanation": "Este organismo é híbrido porque recebe contribuição genética de duas linhagens distintas.",
+        "primary_target_id": "h4",
+        "primary_target_type": "node",
+        "related_node_ids": [
+          "h1",
+          "h3"
+        ],
+        "related_edge_ids": [
+          "h1__h4",
+          "h3__h4"
+        ],
+        "short_feedback": "A Flor-violeta híbrida recebe contribuição de duas linhagens.",
+        "full_explanation": "É hibridização porque a Flor-violeta híbrida não é explicada apenas por uma relação ancestral direta: no grafo, ela recebe contribuições vindas de Flor-rubra e Flor-anil, representadas por duas ligações especiais que chegam ao mesmo organismo."
       }
     ],
     "explanation": "Flor-violeta híbrida recebe duas conexões laterais. Elas representam contribuição de duas linhagens, algo que uma árvore estritamente bifurcada não mostra.",
     "optional_edges": [
-      {"source": "h1", "target": "h4", "event_type": "hybridization", "label": "contribuição"},
-      {"source": "h3", "target": "h4", "event_type": "hybridization", "label": "contribuição"}
+      {
+        "source": "h1",
+        "target": "h4",
+        "event_type": "hybridization",
+        "label": "contribuição"
+      },
+      {
+        "source": "h3",
+        "target": "h4",
+        "event_type": "hybridization",
+        "label": "contribuição"
+      }
     ],
     "tree_mode": "hybrid_tree"
   },
@@ -81,11 +190,36 @@
     "description": "Uma ligação lateral conecta organismos de ramos evolutivos distantes.",
     "learning_goal": "Identificar transferência genética fora da relação ancestral-descendente.",
     "organisms": [
-      {"id": "t1", "name": "Bactéria-verde", "sequence": "GGTTAACCGGTT", "description": "Microrganismo fictício fotossintético."},
-      {"id": "t2", "name": "Bactéria-musgo", "sequence": "GGTTAACCGGTA", "description": "Linhagem próxima da bactéria-verde."},
-      {"id": "t3", "name": "Bactéria-termal", "sequence": "ACTCAACCATTA", "description": "Linhagem adaptada ao calor."},
-      {"id": "t4", "name": "Bactéria-salina", "sequence": "ACTCAACCATTT", "description": "Linhagem de ambiente salino."},
-      {"id": "t5", "name": "Bactéria-cobre", "sequence": "ACTGAACGATTT", "description": "Linhagem resistente a metais."}
+      {
+        "id": "t1",
+        "name": "Bactéria-verde",
+        "sequence": "GGTTAACCGGTT",
+        "description": "Microrganismo fictício fotossintético."
+      },
+      {
+        "id": "t2",
+        "name": "Bactéria-musgo",
+        "sequence": "GGTTAACCGGTA",
+        "description": "Linhagem próxima da bactéria-verde."
+      },
+      {
+        "id": "t3",
+        "name": "Bactéria-termal",
+        "sequence": "ACTCAACCATTA",
+        "description": "Linhagem adaptada ao calor."
+      },
+      {
+        "id": "t4",
+        "name": "Bactéria-salina",
+        "sequence": "ACTCAACCATTT",
+        "description": "Linhagem de ambiente salino."
+      },
+      {
+        "id": "t5",
+        "name": "Bactéria-cobre",
+        "sequence": "ACTGAACGATTT",
+        "description": "Linhagem resistente a metais."
+      }
     ],
     "expected_events": [
       {
@@ -94,12 +228,28 @@
         "target_type": "edge",
         "event_type": "horizontal_transfer",
         "label": "Transferência horizontal",
-        "explanation": "Esta aresta lateral conecta ramos distantes e representa passagem de material genético fora da ancestralidade direta."
+        "explanation": "Esta aresta lateral conecta ramos distantes e representa passagem de material genético fora da ancestralidade direta.",
+        "primary_target_id": "t1__t5",
+        "primary_target_type": "edge",
+        "related_node_ids": [
+          "t1",
+          "t5"
+        ],
+        "related_edge_ids": [
+          "t1__t5"
+        ],
+        "short_feedback": "A ligação lateral entre Bactéria-verde e Bactéria-cobre representa transferência horizontal.",
+        "full_explanation": "É transferência horizontal porque a ligação especial conecta Bactéria-verde e Bactéria-cobre, que estão em ramos diferentes da árvore. Essa aresta não representa uma relação normal de pai-filho, mas a passagem lateral de material genético."
       }
     ],
     "explanation": "A seta lateral tracejada liga ramos distantes. Ela indica passagem de material genético sem uma relação direta de ancestralidade.",
     "optional_edges": [
-      {"source": "t1", "target": "t5", "event_type": "horizontal_transfer", "label": "gene transferido"}
+      {
+        "source": "t1",
+        "target": "t5",
+        "event_type": "horizontal_transfer",
+        "label": "gene transferido"
+      }
     ],
     "tree_mode": "horizontal_transfer_tree"
   },
@@ -110,12 +260,42 @@
     "description": "Um cenário que reúne divergência, hibridização e transferência horizontal.",
     "learning_goal": "Comparar diferentes eventos evolutivos em uma mesma rede.",
     "organisms": [
-      {"id": "m1", "name": "Ramo-esmeralda", "sequence": "AGCTAACCGTTA", "description": "Linhagem vegetal fictícia ancestral."},
-      {"id": "m2", "name": "Ramo-jade", "sequence": "AGCTAACCGTTC", "description": "Parente próxima do ramo-esmeralda."},
-      {"id": "m3", "name": "Ramo-coral", "sequence": "CGCTTACCATTC", "description": "Linhagem divergente de pigmentação coral."},
-      {"id": "m4", "name": "Ramo-mosaico", "sequence": "AGCTTACCGTTC", "description": "Linhagem híbrida com características combinadas."},
-      {"id": "m5", "name": "Ramo-noturno", "sequence": "CGGTTACCATTA", "description": "Linhagem distante adaptada à baixa luz."},
-      {"id": "m6", "name": "Ramo-lunar", "sequence": "CGGTTACCATTT", "description": "Parente próxima do ramo-noturno."}
+      {
+        "id": "m1",
+        "name": "Ramo-esmeralda",
+        "sequence": "AGCTAACCGTTA",
+        "description": "Linhagem vegetal fictícia ancestral."
+      },
+      {
+        "id": "m2",
+        "name": "Ramo-jade",
+        "sequence": "AGCTAACCGTTC",
+        "description": "Parente próxima do ramo-esmeralda."
+      },
+      {
+        "id": "m3",
+        "name": "Ramo-coral",
+        "sequence": "CGCTTACCATTC",
+        "description": "Linhagem divergente de pigmentação coral."
+      },
+      {
+        "id": "m4",
+        "name": "Ramo-mosaico",
+        "sequence": "AGCTTACCGTTC",
+        "description": "Linhagem híbrida com características combinadas."
+      },
+      {
+        "id": "m5",
+        "name": "Ramo-noturno",
+        "sequence": "CGGTTACCATTA",
+        "description": "Linhagem distante adaptada à baixa luz."
+      },
+      {
+        "id": "m6",
+        "name": "Ramo-lunar",
+        "sequence": "CGGTTACCATTT",
+        "description": "Parente próxima do ramo-noturno."
+      }
     ],
     "expected_events": [
       {
@@ -124,7 +304,19 @@
         "target_type": "node",
         "event_type": "speciation",
         "label": "Especiação",
-        "explanation": "Este ancestral representa uma bifurcação importante entre linhagens descendentes do cenário misto."
+        "explanation": "Este ancestral representa uma bifurcação importante entre linhagens descendentes do cenário misto.",
+        "primary_target_id": "ancestor_5",
+        "primary_target_type": "node",
+        "related_node_ids": [
+          "ancestor_3",
+          "ancestor_4"
+        ],
+        "related_edge_ids": [
+          "ancestor_5__ancestor_3",
+          "ancestor_5__ancestor_4"
+        ],
+        "short_feedback": "O Ancestral 5 marca a divergência principal do desafio misto.",
+        "full_explanation": "O Ancestral 5 representa especiação porque divide a linhagem em dois grandes ramos descendentes. No grafo, essa bifurcação separa o ramo que leva a Ramo-mosaico/Ramo-esmeralda/Ramo-jade do ramo que leva a Ramo-coral/Ramo-noturno/Ramo-lunar."
       },
       {
         "id": "evt_mix_02",
@@ -132,7 +324,19 @@
         "target_type": "node",
         "event_type": "hybridization",
         "label": "Hibridização",
-        "explanation": "Ramo-mosaico combina sinais de duas linhagens e por isso funciona como um nó híbrido neste exercício."
+        "explanation": "Ramo-mosaico combina sinais de duas linhagens e por isso funciona como um nó híbrido neste exercício.",
+        "primary_target_id": "m4",
+        "primary_target_type": "node",
+        "related_node_ids": [
+          "m1",
+          "m3"
+        ],
+        "related_edge_ids": [
+          "m1__m4",
+          "m3__m4"
+        ],
+        "short_feedback": "Ramo-mosaico recebe contribuição de duas linhagens distintas.",
+        "full_explanation": "É hibridização porque o Ramo-mosaico combina contribuições de Ramo-esmeralda e Ramo-coral. As duas ligações especiais chegando ao mesmo nó mostram que sua origem envolve mais de uma linhagem."
       },
       {
         "id": "evt_mix_03",
@@ -140,14 +344,40 @@
         "target_type": "edge",
         "event_type": "horizontal_transfer",
         "label": "Transferência horizontal",
-        "explanation": "A ligação especial entre ramos distantes representa transferência horizontal de genes."
+        "explanation": "A ligação especial entre ramos distantes representa transferência horizontal de genes.",
+        "primary_target_id": "m2__m6",
+        "primary_target_type": "edge",
+        "related_node_ids": [
+          "m2",
+          "m6"
+        ],
+        "related_edge_ids": [
+          "m2__m6"
+        ],
+        "short_feedback": "A ligação entre Ramo-jade e Ramo-lunar representa transferência horizontal.",
+        "full_explanation": "É transferência horizontal porque a ligação especial conecta Ramo-jade e Ramo-lunar, que pertencem a ramos diferentes. Essa conexão não é uma relação de descendência direta, mas uma passagem lateral de material genético."
       }
     ],
     "explanation": "As bifurcações sugerem especiação, as conexões extras convergem no Ramo-mosaico e a aresta lateral tracejada representa transferência horizontal.",
     "optional_edges": [
-      {"source": "m1", "target": "m4", "event_type": "hybridization", "label": "contribuição"},
-      {"source": "m3", "target": "m4", "event_type": "hybridization", "label": "contribuição"},
-      {"source": "m2", "target": "m6", "event_type": "horizontal_transfer", "label": "gene transferido"}
+      {
+        "source": "m1",
+        "target": "m4",
+        "event_type": "hybridization",
+        "label": "contribuição"
+      },
+      {
+        "source": "m3",
+        "target": "m4",
+        "event_type": "hybridization",
+        "label": "contribuição"
+      },
+      {
+        "source": "m2",
+        "target": "m6",
+        "event_type": "horizontal_transfer",
+        "label": "gene transferido"
+      }
     ],
     "tree_mode": "mixed_tree"
   }
