@@ -503,7 +503,6 @@ app.layout = html.Main(
 
         html.Section(
             [
-                html.Div(id="example-heading-shell", className="example-main"),
                 html.Div(id="game-status-bar", className="game-status-bar"),
                 html.Div(id="game-instructions-shell"),
                 html.Div(
@@ -733,7 +732,6 @@ def review_on_graph(_clicks: list[int], submitted: list[dict[str, Any]], duel_st
 
 
 @app.callback(
-    Output("example-heading-shell", "children"),
     Output("game-status-bar", "children"),
     Output("game-status-bar", "style"),
     Output("game-instructions-shell", "children"),
@@ -785,12 +783,6 @@ def render_app_state(example_id: str, mode: str, selected: dict[str, Any] | None
     if feedback:
         feedback_class += " correct" if feedback.get("correct") else " incorrect"
 
-    heading = [
-        html.Div([html.Span(example["difficulty"], className=f"difficulty-badge difficulty-{example['difficulty'].lower()}"), html.Span(example["tree_mode"].replace("_", " "), className="mode-label")], className="example-meta"),
-        html.H2(example["title"]),
-        html.P(example["description"], className="example-description"),
-    ]
-
     layout_class = "game-layout learning-layout" if mode == "learning" else "game-layout is-game-mode"
     tree_class = "game-tree-column is-learning learning-full-width" if mode == "learning" else "game-tree-column is-game-mode"
     sidebar_class = "game-sidebar is-learning is-hidden" if mode == "learning" else "game-sidebar is-game-mode"
@@ -803,7 +795,6 @@ def render_app_state(example_id: str, mode: str, selected: dict[str, Any] | None
     layout = {**DEFAULT_TREE_LAYOUT, "padding": 38 + (layout_seed % 2)}
 
     return (
-        heading,
         status_children,
         status_style,
         build_instructions_strip(mode, hint_visible),
