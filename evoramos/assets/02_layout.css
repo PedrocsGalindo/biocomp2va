@@ -1,0 +1,174 @@
+﻿.hero {
+  position: relative;
+  z-index: 1;
+  width: min(1320px, calc(100% - 40px));
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 60px;
+  margin: 24px auto 0;
+  padding: 80px max(5vw, 58px);
+  overflow: hidden;
+  border: 1px solid var(--border-teal);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 76% 30%, rgba(46, 230, 189, .15), transparent 28%),
+    linear-gradient(135deg, rgba(8, 26, 24, .88), rgba(42, 16, 32, .45));
+  box-shadow: var(--shadow-deep), var(--glow-teal);
+  backdrop-filter: blur(16px);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 44%, rgba(84, 240, 194, .035), transparent 60%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 720px; }
+.hero-kicker, .eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--teal-300);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-shadow: 0 0 18px rgba(46, 230, 189, .22);
+}
+.hero h1 {
+  margin-bottom: 4px;
+  color: var(--text-main);
+  font-size: clamp(4rem, 10vw, 7.5rem);
+  line-height: .95;
+  letter-spacing: -.05em;
+}
+.hero h1 span { color: var(--teal-300); }
+.hero h2 {
+  max-width: 690px;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+.hero p { max-width: 640px; color: var(--text-soft); font-size: 1.08rem; }
+.hero-button, .action-button, .carousel-button {
+  border: 1px solid var(--border-teal);
+  border-radius: 999px;
+  background: rgba(7, 24, 21, .78);
+  color: var(--text-main);
+  font-weight: 700;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
+}
+.hero-button {
+  display: inline-block;
+  padding: 13px 20px;
+  text-decoration: none;
+}
+.action-button { padding: 12px 18px; }
+.hero-button:hover, .action-button:hover, .carousel-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(84, 240, 194, .72);
+  background: rgba(15, 61, 52, .82);
+  box-shadow: 0 0 24px rgba(46, 230, 189, .18);
+}
+.hero-button:focus-visible, .action-button:focus-visible, .carousel-button:focus-visible {
+  outline: 3px solid rgba(84, 240, 194, .3);
+  outline-offset: 3px;
+}
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  min-height: 390px;
+  filter: drop-shadow(0 25px 24px rgba(0, 0, 0, .28));
+}
+.hero-visual::before, .hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 42px 46%;
+  z-index: 0;
+  pointer-events: none;
+  border: 2px solid rgba(84, 240, 194, .24);
+  border-radius: 50%;
+  transform: rotate(24deg);
+  box-shadow: 0 0 22px rgba(46, 230, 189, .08);
+}
+.hero-visual::after { transform: rotate(-24deg); }
+.dna-base {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border: 1px solid var(--border-teal);
+  border-radius: 50%;
+  background: rgba(7, 24, 21, .64);
+  color: var(--green-300);
+  box-shadow: inset 0 0 28px rgba(46, 230, 189, .06), 0 0 24px rgba(46, 230, 189, .08);
+  backdrop-filter: blur(10px);
+  font-family: "DM Serif Display", serif;
+  font-size: 2rem;
+}
+.base-a { top: 6%; left: 15%; }
+.base-t { top: 27%; right: 8%; }
+.base-c { bottom: 20%; left: 8%; }
+.base-g { right: 23%; bottom: 2%; }
+
+.content-section, .example-shell {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 82px 0;
+}
+.soft-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  padding-inline: max(20px, calc((100vw - 1180px) / 2));
+  border-block: 1px solid rgba(84, 240, 194, .08);
+  background:
+    radial-gradient(circle at 12% 50%, rgba(109, 56, 92, .12), transparent 30%),
+    linear-gradient(135deg, rgba(6, 18, 16, .58), rgba(10, 26, 23, .42));
+}
+.section-heading { max-width: 700px; margin-bottom: 34px; }
+.section-heading h2, .tree-toolbar h2 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.1;
+}
+.section-heading p { color: var(--text-muted); }
+
+
+/* Ajuste conservador: mantém o hero visual, mas recupera um símbolo ao lado do nome. */
+.hero-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.hero-logo-mark {
+  display: inline-grid;
+  place-items: center;
+  width: clamp(54px, 7vw, 82px);
+  height: clamp(54px, 7vw, 82px);
+  flex: 0 0 auto;
+  border: 1px solid rgba(84, 240, 194, .36);
+  border-radius: 22px;
+  background: rgba(7, 24, 21, .64);
+  box-shadow: inset 0 0 28px rgba(46, 230, 189, .08), 0 0 28px rgba(46, 230, 189, .14);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+.hero-title-row h1 {
+  margin-bottom: 0;
+}
+
+/* Dá mais respiro lateral ao jogo sem remover a estrutura modular. */
+.example-shell {
+  width: min(1320px, calc(100% - 40px));
+}

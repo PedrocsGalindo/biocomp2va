@@ -1,0 +1,111 @@
+@media (max-width: 1050px) {
+  .exercise-grid { grid-template-columns: repeat(3, 1fr); }
+  .mode-selector { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .game-layout.is-game-mode {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "tree"
+      "move"
+      "review";
+  }
+  .game-sidebar.is-game-mode { position: static; }
+}
+
+@media (max-width: 900px) {
+  .correction-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    width: min(100% - 24px, 1320px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    margin-top: 12px;
+    padding: 58px 26px;
+  }
+  .hero-visual { display: none; }
+  .content-section, .example-shell { width: min(100% - 24px, 1180px); padding-block: 58px; }
+  .soft-section, .concept-carousel-section { width: 100%; padding-inline: 12px; }
+  .reading-grid, .exercise-grid { grid-template-columns: 1fr; }
+  .mode-selector { grid-template-columns: 1fr; }
+  .concept-carousel { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .concept-carousel-stage { grid-column: 1 / -1; grid-row: 1; padding: 6px; }
+  .concept-carousel-track {
+    grid-template-columns: 18% 64% 18%;
+    width: 140%;
+    margin-left: -20%;
+    padding-block: 18px;
+  }
+  .concept-carousel-card { min-height: 330px; padding: 28px 24px; }
+  .concept-card-preview { min-height: 270px; padding: 22px 16px; opacity: .3; transform: scale(.76); }
+  .concept-card-preview.left { margin-right: -38px; }
+  .concept-card-preview.right { margin-left: -38px; }
+  .concept-card-preview p, .concept-card-preview .concept-position { display: none; }
+  .carousel-button { justify-content: center; }
+  .carousel-previous { grid-column: 1; }
+  .carousel-next { grid-column: 2; }
+  .tree-actions-toolbar,
+  .tree-toolbar-actions { justify-content: flex-start; flex-wrap: wrap; }
+  .tree-canvas { height: 560px; }
+  .answer-choice-grid { grid-template-columns: 1fr; }
+  .example-main, .game-sidebar, .game-tree-column { padding: 20px; }
+  footer { flex-direction: column; }
+}
+
+
+@media (max-width: 1050px) {
+  .classification-compact-header,
+  .compact-classify-flow,
+  .compact-relation-flow {
+    grid-template-columns: 1fr;
+  }
+  .compact-tabs {
+    justify-self: stretch;
+    max-width: none;
+  }
+  .compact-choice-grid,
+  .relation-type-grid {
+    grid-template-columns: 1fr;
+  }
+  .classification-inline-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .compact-cancel-button {
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .game-tree-column.is-free-mode {
+    padding-bottom: 96px;
+  }
+  .tree-annotation-toolbar {
+    right: 18px;
+    bottom: 18px;
+    justify-content: flex-end;
+  }
+  .download-tree-button {
+    min-width: 42px;
+  }
+  .download-tree-button span:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .tree-stage-grid { grid-template-columns: 1fr; }
+  .tree-side-panel .organism-table { min-width: 620px; }
+}
+
+@media (max-width: 760px) {
+  .tree-side-panel .organism-table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+  .tree-side-panel .table-wrapper {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

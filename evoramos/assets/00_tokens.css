@@ -1,0 +1,30 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-900: #050908;
+  --bg-850: #071311;
+  --bg-800: #0a1a17;
+  --bg-700: #10241f;
+  --panel-900: rgba(6, 18, 16, .78);
+  --panel-800: rgba(9, 32, 28, .82);
+  --panel-700: rgba(16, 45, 38, .70);
+  --teal-400: #2ee6bd;
+  --teal-300: #54f0c2;
+  --green-300: #78f2c4;
+  --plum-800: #2a1020;
+  --plum-700: #3a162b;
+  --plum-500: #6d385c;
+  --text-main: #f3efe4;
+  --text-soft: #c5d2cb;
+  --text-muted: #82968e;
+  --border-teal: rgba(84, 240, 194, .32);
+  --border-teal-soft: rgba(84, 240, 194, .16);
+  --border-plum: rgba(109, 56, 92, .32);
+  --shadow-deep: 0 24px 80px rgba(0, 0, 0, .42);
+  --shadow-panel: 0 18px 50px rgba(0, 0, 0, .30);
+  --glow-teal: 0 0 36px rgba(46, 230, 189, .14);
+  --orange: #d99058;
+  --red: #e2687d;
+}
+
+* { box-sizing: border-box; }
