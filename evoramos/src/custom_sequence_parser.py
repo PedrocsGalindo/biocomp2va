@@ -16,10 +16,10 @@ def build_uploaded_example(contents: str, filename: str | None, imported_example
         "title": "Árvore importada",
         "difficulty": "Livre",
         "description": f"Árvore automática montada a partir de {len(organisms)} sequências de {source_name}.",
-        "learning_goal": "Criar uma interpretação própria da árvore por similaridade genética.",
+        "learning_goal": "Criar uma interpretação própria da árvore construída por distância genética alinhada.",
         "organisms": organisms,
         "expected_events": [],
-        "explanation": "Esta árvore foi montada por similaridade. Relações especiais, como hibridização e transferência horizontal, devem ser anotadas manualmente.",
+        "explanation": "Esta árvore foi montada por uma lógica didática inspirada no UPGMA: alinhamento par a par, distância por mismatches/gaps e agrupamento por menor distância média. Relações especiais, como hibridização e transferência horizontal, devem ser anotadas manualmente.",
         "optional_edges": [],
         "tree_mode": "uploaded_similarity_tree",
     }
@@ -51,15 +51,10 @@ def parse_sequence_text(text: str) -> list[dict[str, Any]]:
         raise ValueError("Envie pelo menos duas sequências para montar a árvore.")
 
     organisms = []
-    expected_length: int | None = None
     for index, (name, sequence) in enumerate(entries, start=1):
         cleaned = normalize_sequence(sequence)
         if not cleaned:
             raise ValueError(f"A sequência {index} está vazia ou contém caracteres inválidos.")
-        if expected_length is None:
-            expected_length = len(cleaned)
-        elif len(cleaned) != expected_length:
-            raise ValueError("Todas as sequências precisam ter o mesmo tamanho para esta árvore.")
         organisms.append(
             {
                 "id": f"upload_{index}",

@@ -94,7 +94,6 @@ def _validate_example(example: Any, index: int) -> None:
         raise ValueError(f"O exemplo {example['id']} precisa ter organismos.")
 
     organism_ids: set[str] = set()
-    sequence_lengths: set[int] = set()
     for organism in organisms:
         if not isinstance(organism, dict):
             raise ValueError(f"Organismo inválido no exemplo {example['id']}.")
@@ -119,14 +118,8 @@ def _validate_example(example: Any, index: int) -> None:
                 )
 
         sequence = organism["sequence"]
-        if set(sequence.upper()) - {"A", "T", "C", "G"}:
+        if set(sequence.upper()) - {"A", "T", "C", "G", "N"}:
             raise ValueError(f"Sequência inválida no exemplo {example['id']}.")
-        sequence_lengths.add(len(sequence))
-
-    if len(sequence_lengths) != 1:
-        raise ValueError(
-            f"As sequências do exemplo {example['id']} devem ter o mesmo tamanho."
-        )
 
     if not isinstance(example["expected_events"], list):
         raise ValueError(f"expected_events inválido no exemplo {example['id']}.")
